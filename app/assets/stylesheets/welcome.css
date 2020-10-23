@@ -1,0 +1,76 @@
+.login_page {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.tagline {
+  color: white;
+  font-size: 28px;
+  text-align: center;
+  color: :white;
+  font-style: italic;
+}
+
+.homePageButtons{
+  align-items: center;
+  height: 80%;
+  width: 100%;
+  margin-top: 22 0 0 30 %;
+  margin: 210px 0 0 412px;
+}
+
+.homePageButtons > div{
+  display: inline-block;
+  width: 300px;
+}
+
+.homePageButtons > div > a >  input{
+  height: 76px;
+  width: 300px;
+  background: #057A9A;
+  border-radius: 5px;
+  border: 1px solid #d6caca;
+  color: white;
+  font-size: 28px;
+}
+
+.login_container{
+  position: relative;
+  width: 80%;
+  height: 80%;
+  margin: 100 0 0 500;
+}
+
+.label{
+  display: inline-block;
+  width: 14%;
+  font-size: 35px;
+  color: white;
+}
+
+.login_signup_buttons{
+  width: 300px;
+  margin: 20 0 0 117px;
+}
+
+.login_signup_buttons > a > input{
+  height: 41px;
+  width: 250px;
+  background: #057A9A;
+  border-radius: 5px;
+  border: 1px solid #d6caca;
+  color: white;
+  font-size: 28px;
+}
+
+.login_signup_buttons > a >input{
+  height: 41px;
+  width: 250px;
+  background: #057A9A;
+  border-radius: 5px;
+  border: 1px solid #d6caca;
+  color: white;
+  font-size: 28px;
+}

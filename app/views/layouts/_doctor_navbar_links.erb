@@ -1,0 +1,14 @@
+<ul class="nav navbar-nav">
+  <% if current_doctor %>
+    <li>
+      <%= link_to "New Group", root_path%>
+    </li>
+  <% end %>
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+  <% if current_doctor %>
+    <li><%= link_to "Profile", edit_doctor_registration_path %></li>
+    <li><%= link_to "Log Out", destroy_doctor_session_path, method: "delete" %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,16 @@
+<% if current_patient.blank? && current_doctor.blank? %>
+  <div class="login_page">
+    <div class="homePageButtons">
+      <div>
+        <a href=<%= new_session_path(:patient)%>>
+          <input type="button" name="PATIENT" value="I AM PATIENT" >
+        </a>
+      </div>
+      <div >
+        <a href=<%= new_session_path(:doctor)%>>
+          <input type="button" name="DOCTOR" value="I AM DOCTOR" >
+        </a>
+      </div>
+    </div>
+  </div>
+<% end %>
