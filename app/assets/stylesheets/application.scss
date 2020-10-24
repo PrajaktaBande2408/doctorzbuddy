@@ -17,6 +17,24 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar {
+  background: #07A3AD;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.container {
+  padding: 100px;
+}
+
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+
 .alert-error {
   background-color: #f2dede;
   border-color: #eed3d7;
