@@ -1,7 +1,10 @@
 <ul class="nav navbar-nav">
   <% if current_patient %>
     <li>
-      <%= link_to "New Group", root_path%>
+      <%= link_to "Available Slots", slots_path%>
+    </li>
+    <li>
+      <%= link_to "Booked Appointments", appointments_path%>
     </li>
   <% end %>
 </ul>

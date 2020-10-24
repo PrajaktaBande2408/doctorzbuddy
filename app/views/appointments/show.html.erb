@@ -1,4 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<h3>Appointment</h3>
+<% if current_doctor.present? %>
+    <label>Patient Name: </label>
+    <%= @appointment.patient.full_name %>
+<% elsif current_patient.present? %>
+    <label>Doctor Name: </label>
+    <%= @appointment.doctor.full_name %>
+<% end %>
+<br>
+<label>From Time: </label>
+<%= @appointment.slot.from_time %>
+<br>
+<label>To Time: </label>
+<%= @appointment.slot.to_time %>
+<br>
+<label>Date: </label>
+<%= @appointment.slot.date.to_date %>
+<br>
+<br>
+<!-- <%= link_to 'Edit', edit_appointment_path(@appointment) %> | -->
 <%= link_to 'Back', appointments_path %>

@@ -1,9 +1,13 @@
 class SlotsController < ApplicationController
-  before_action :set_slot, only: [:show, :edit, :update, :destroy]
-  before_action :verify_doctor_authorization!
+  before_action :set_slot, only: [:show, :edit, :update, :destroy, :book]
+  before_action :verify_doctor_authorization!, except: [:index, :book]
 
   def index
-    @slots = current_doctor.slots
+    @slots = if current_doctor.present?
+      current_doctor.slots
+    elsif current_patient.present?
+      Slot.where(booked: false)
+    end
   end
 
   def show
@@ -49,10 +53,29 @@ class SlotsController < ApplicationController
     end
   end
 
+  def book
+    @appointment = @slot.build_appointment(patient_id: current_patient.id)
+    if @appointment.save
+      respond_to do |format|
+        format.html { redirect_to @appointment, notice: 'Appointment has been booked successfully.' }
+        format.json { render :show, status: :ok, location: @appointment }
+      end
+    else
+      respond_to do |format|
+        format.html { render :index }
+        format.json { render json: @appointment.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
 
   def set_slot
-    @slot = current_doctor.slots.find(params[:id])
+    @slot = if current_doctor.present?
+      current_doctor.slots.find(params[:id])
+    else
+      Slot.find(params[:id])
+    end
   end
 
   def slot_params

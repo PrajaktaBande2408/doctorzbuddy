@@ -6,4 +6,8 @@ class Patient < ApplicationRecord
 
   has_many :slots
   has_many :doctors, through: :slots
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

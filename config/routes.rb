@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :patients
   devise_for :doctors
 
-  resources :slots
+  resources :slots do
+    post :book, on: :member
+  end
   resources :appointments
 end
